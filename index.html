@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp" ng-jq>
+<head>
+    <title></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/Sample.js"></script>
+</head>
+<body ng-controller="SampleCtrl">
+    <div>
+        <h2>Angularjs test</h2>
+        <span>{{model.firstName}}</span>
+    </div>
+
+<input type="button" ng-click="clickMe('something')" value="ClickMe!"/>
+
+<div>
+    Click here to show the content of the details list: <input type="checkbox" ng-model="showDetails"><br>
+    <br>
+
+    <details ng-open="showDetails">
+      <summary>Copyright 1999-2016.</summary>
+      <p> - by Refsnes Data. All Rights Reserved.</p>
+    </details>
+
+    <p><b>Note:</b> The details tag is currently only supported in Opera, Chrome, and Safari.</p>
+</div>
+
+<div>
+    <p>This code is compiled by AngularJS: {{ 5+5 }}</p>
+    <p ng-non-bindable>This code is not compiled by AngularJS: {{ 5+5 }}</p>
+</div>
+
+<div>
+    <form name="form">
+        <label for="regex">Set a pattern (regex string): </label>
+        <input type="text" ng-model="regex" id="regex" />
+        <br>
+        <label for="input">This input is restricted by the current pattern: </label>
+        <input type="text" ng-model="model" id="input" name="input" ng-pattern="regex" /><br>
+        <hr>
+        input valid? = <code>{{form.input.$valid}}</code><br>
+        model = <code>{{model}}</code>
+    </form>
+</div>
+
+</body>
+</html>
